@@ -4,7 +4,7 @@
 //npm run test-single -- test/'NAME_OF_THE_TEST_FILE_YOU_ARE_TESTING'
 
 example :
-if you are doing exercise 1 of block 1 it should be 
+//if you are doing exercise 1 of block 1 it should be 
 
 //npm run test-single -- test/b1exercise1.test.js
 
@@ -27,7 +27,6 @@ EXERCISE 2:
 //assign 10 to a and 24 to b
 
 //return the total of the multiplication of a and b
-
 
 
 
