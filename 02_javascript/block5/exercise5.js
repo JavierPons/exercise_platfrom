@@ -27,6 +27,7 @@ function checkAge(year,month, day) {
     var millisBetween = myDate.getTime() - endDay.getTime();
     var days = millisBetween / millisecondsPerDay;
     var months = millisBetween / millisecondsPerMonth;
+    
     // Round down.
     var rounding = Math.floor(days);
     

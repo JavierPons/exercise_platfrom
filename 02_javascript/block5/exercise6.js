@@ -20,7 +20,7 @@ var currenciesDB = []; // currencies dollar, euro, gbp, coronas,
 function dinamicConverter(arg1,arg2,arg3) {
 	var arrMia = [];
         
-    if( arguments[0] === 'add') {
+    if( arg1 === 'add') {
         
        
             if( currenciesDB.length === 0) {
@@ -28,27 +28,40 @@ function dinamicConverter(arg1,arg2,arg3) {
 				return 1;
 				
             }else if(currenciesDB.length > 0){
-            	   for(var i = 0; i < currenciesDB.length; i++) {
-                        if(currenciesDB[i][0] === arguments[1][0]){
-                            return `invalid data provided!`;
-                           }else if (currenciesDB[i][0] !== arguments[1][0]){
-										console.log('dinero')
-                            			currenciesDB.push(arg2);
-                            			return 1;
-                           }
-                       }
-                        
+                function isthere(arr,val){
+                    
+                }
                    }
             		
             
         //return it has beed add 1
         // if have been present --> invalid data provided!
-    }else if(arguments[0] === 'convert') {
+    }else if(arg1 === 'convert') {
             // arg3 currency to convert in that
             // if is other 'gbp' 'dollar' 'euro'
     }
 
 }
+//'gbp'
+// currenciesDB = [['usd'],['eur'],['gbp']]
+
+// find if currency exist in array method 1
+//function isthere(arr, val){
+//	var fountIt = false;
+//	arr.forEach(function(ele){
+//		if(ele[0] === val[0]) {
+//			fountIt = true;
+  //      }
+//	})
+//	return fountIt;
+//}
+// 2
+//function findIt (arr, val){
+//	return arr.findIndex(function(a){ 
+//		return a[0] === val; 
+//	})
+// }
+
 
 
 

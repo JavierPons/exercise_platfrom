@@ -6,18 +6,8 @@
 var obj = {a: 1, b: 2}
 function modifyObject(obj, c, num) {
     
-    if(arguments[1] !== obj['a'] || arguments[1] !== ob['b']){
-    obj['c']= {};
-    obj['c'] = num;
-
-    return obj;
-    }else{
-        if(arguments[1] === obj['a']){
-            obj['a'] = num;
-        }else if(arguments[1] === obj['b']){
-            obj['b']= num;
-        }
-    }
+   obj[c]=num;
+   return obj;
 }
 module.exports ={
     obj, modifyObject
