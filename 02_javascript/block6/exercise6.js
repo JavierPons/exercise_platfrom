@@ -5,7 +5,20 @@
 // You cannot use the ES6 method findIndex for this exercise!
 // it should return the index of the found element or -1 if is not there.
 
+function getIndex(arr) {
+    var count = 0;
+arr.forEach(function(item){
+        
+        if(item != undefined){
+            count++;            
+}else{ 
+    return -1
 
+}
+        
+})
+       return count; 
+}
 module.exports ={
     getIndex
 }
