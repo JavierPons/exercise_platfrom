@@ -11,14 +11,14 @@
 
 // Example schema
 
-schema = ["id", "name", "age"]
+//schema = ["id", "name", "age"]
 
 // Please note the schema is only an example here, I may be calling a different one from the test...
 // Define you DB array inside the function to avoid issues.
 // your function should take three arguments
     // an action, an object and a schema.
     // the action should be "add" or no changes should be done.
-var DB = []
+//var DB = []
 
 // model("add", {id: 1, name: "Joe", age: 32, address: "Muntaner 262, Barcelona"})
 // DB // [{id: 1, name: "Joe", age: 32}] => Address was not added because not allowed by the schema 
@@ -28,11 +28,28 @@ var DB = []
 
 
 
-
 function model(type, data) {
+    var DB = [];
+    var temp = {}
+        if(type !== 'add'){
 
+        }else if(type === 'add'){
 
+            for(var key in data){
+						
+               if(schema.includes(key)){
+							
+						temp[key] = data[key];
 }
+                                     
+        
+        
+	}
+} DB.push(temp);
+    
+return DB;
+}
+
 module.exports = {
     model
 }
