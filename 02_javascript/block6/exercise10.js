@@ -11,7 +11,7 @@
 
 // Example schema
 
-//schema = ["id", "name", "age"]
+schema = ["id", "name", "age","firstname", "email"]
 
 // Please note the schema is only an example here, I may be calling a different one from the test...
 // Define you DB array inside the function to avoid issues.
@@ -40,10 +40,7 @@ function model(type, data) {
                if(schema.includes(key)){
 							
 						temp[key] = data[key];
-}
-                                     
-        
-        
+}     
 	}
 } DB.push(temp);
     

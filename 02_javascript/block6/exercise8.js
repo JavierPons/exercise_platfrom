@@ -4,7 +4,7 @@
 function last(obj) {
     var obj2 = {};
     for (var key in obj) {
-        var mio = `${key}:` ;
+        var mio = `${key}` ;
         var tuyo = `${obj[key]}`
     }
     
