@@ -14,8 +14,23 @@
 // If the third argument is not passed it should default to 1.
 
 function splice(obj,num1,num2){
+    var newObj = {};
+    var arr = [];
+for(var key in obj){
+    var innerObj = {};
+    innerObj[key] = obj[key];
+    arr.push(innerObj)
     
 }
+    
+ var rt = arr.splice(num1,num2)
+ for(var i = 0; i < rt.length; i++){
+    return rt[i];
+    
+}
+    
+
+}     
 
 
 module.exports ={

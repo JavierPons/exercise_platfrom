@@ -6,6 +6,34 @@
 // not be added if missing. If an input is not present or breaking an other of the schema rules, the value will be set 
 // to the default.
 
+function model(type, data) {
+    var DB = [];
+    var temp = {}
+    if (type !== 'add') {
+       //something
+    } else if (type === 'add'){
+       for(var item in data){
+          for(var key in schema){
+              var obj = schema[key];
+  
+          for(var key in obj){
+              if(item !== key){
+              }else if(item === key){
+                   
+  
+  
+  
+              }	
+          }
+      }
+    }
+               
+    };    DB.push(temp)        
+        
+      return DB;
+    
+    };
+  
 
 module.exports = {
     model
