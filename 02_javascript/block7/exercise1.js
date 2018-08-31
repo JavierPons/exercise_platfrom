@@ -26,6 +26,32 @@ DB = [
                         ]
         }
     ]
+// this is working most
+
+function moviesDB(DB, genre, obj) {
+    DB.forEach(function(arr){
+        
+     if(arr.genre == genre){
+                
+            if(arr.movies){
+                arr.movies.forEach(function(film){
+                            
+                    if(film.title !== obj.title){
+                            
+                            console.log(genre)
+                        DB[genre]['movies'].push(obj);
+                } 
+             })
+        }
+      }else{
+            DB.push(genre)	
+            }
+
+})
+}
+
+
+// this is for check out not good code
     function moviesDB(DB, genre,obj) {
         //start
          for (var i = 0; i < DB.length; i++) {
