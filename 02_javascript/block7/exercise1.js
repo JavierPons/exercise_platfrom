@@ -50,7 +50,27 @@ function moviesDB(DB, genre, obj) {
             }
 }
 
-
+// test for something
+function moviesDB(DB, genre, obj) {
+    if (!DB.some(function (obj) {
+        return obj.genre === genre;
+      })) {
+      DB.push({
+        genre: genre,
+        movies: []
+      })
+    }
+    DB.forEach(function (dbObj) {
+      var isInMovies = dbObj.movies.some(function (mObj) {
+        return mObj.title == obj.title;
+      })
+      if (dbObj.genre === genre && !isInMovies) {
+        dbObj.movies.push(obj);
+      } else if(isInMovies) {
+        console.log(`the movie the ${obj.title} is already in the database!`)
+      }
+    });
+  }
 module.exports ={
     moviesDB
 }
