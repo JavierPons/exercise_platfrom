@@ -30,76 +30,27 @@ DB = [
 
 function moviesDB(DB, genre, obj) {
     DB.forEach(function (dbObj) {
-		if (dbObj.genre == genre && !dbObj.movies.some(function (mObj) {
+        if (dbObj.genre == genre && !dbObj.movies.some(function (mObj) {
             return mObj.title == obj.title;
         })) {
             dbObj.movies.push(obj);
         }else if(dbObj.genre == genre && dbObj.movies.some(function (mObj) {
             return mObj.title == obj.title;
         })){
-				console.log(`the movie the ${obj.title} is already in the database!`)
+                console.log(`the movie the ${obj.title} is already in the database!`)
 
 
-		}
+        } 
 
-		
+
     });
-}
+		if(DB.genre !== genre){
+                DB.push({genre: genre});
 
-// first working add a film if is same genre and not there
-function moviesDB(DB, genre, obj) {
-    DB.forEach(function(arr,index){
-     if(arr.genre == genre){
-				arr.movies.forEach(function(dedo){
-					if(dedo.title !== obj['title'])
-						 DB[index].movies.push(obj);
-				})
-				    
-     	}
-
-	})
-}
-
-
-
-
-// this is working most
-
-function moviesDB(DB, genre, obj) {
-    DB.forEach(function(arr){
-        
-     if(arr.genre == genre){
-                
-            if(arr.movies){
-                arr.movies.forEach(function(film){
-                            
-                    if(film.title !== obj.title){
-                            
-                            console.log(genre)
-                        DB[genre]['movies'].push(obj);
-                } 
-             })
-        }
-      }else{
-            DB.push(genre)	
             }
-
-})
 }
 
 
-// this is for check out not good code
-    function moviesDB(DB, genre,obj) {
-        //start
-         for (var i = 0; i < DB.length; i++) {
-             if(DB[i]['genre'] == genre){
-               if(DB[i].gender.movies === DB[i]['movies'][0].title){
-                DB[i].movies.push(obj);
-               }
-             }
-        }
-         DB.push({genre: genre});
-     };
 module.exports ={
     moviesDB
 }
