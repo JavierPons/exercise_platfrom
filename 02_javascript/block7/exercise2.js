@@ -25,7 +25,10 @@
 // Please make sure that in the final message
 
 
+function addCurrency(coinObj,value, arrCoins){
 
+
+}
 
 
 
