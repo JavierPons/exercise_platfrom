@@ -25,7 +25,7 @@
 // Please make sure that in the final message
 
 
-function addCurrency(coinObj,value, arrCoins){
+function addCurrency(coin,value, dbCoins){
 
 
 }

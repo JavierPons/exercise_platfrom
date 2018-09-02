@@ -5,8 +5,8 @@
 var arr = ['one','two','three','four']   
 
 function shuffle(arr) {
-
-    
+  var shuf = arr.sort();
+    return shuf;
 }
 module.exports = {
     shuffle
