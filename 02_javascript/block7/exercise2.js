@@ -26,10 +26,37 @@
 
 
 function addCurrency(coin,value, dbCoins){
-
+    dbCoins = [{
+  coin:'EURO', 
+  rate:0.86
+},
+{
+  coin:'YEN', 
+  rate:0.86
+},
+{
+  coin:'KORONA', 
+  rate:0.86
+}
+];
+    for(var i = 0; i < dbCoins.length; i++){
+                    
+                if(dbCoins[i].coin === coin){
+                      findcurrency();
+                        console.log('estupendo')
+                                break;
+                    }else if (dbCoins[i].coin !== coin){
+                                dbCoins.push({coin: coin, rate: value})
+                        
+                                    break;
+                            }
+    }
 
 }
+function findcurrency(coin,value, dbCoins){
+    var retrieve = dbCoins.rate;
 
+}
 
 
 module.exports = {
