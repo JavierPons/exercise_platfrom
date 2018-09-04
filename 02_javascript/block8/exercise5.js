@@ -14,18 +14,18 @@
     function sorter(arr, order){
         if(order === undefined){
           return arr.sort(function (a, b) {
-  return a - b;
+                return a - b;
 		
 });
         }else if(order === 'ascending'){
           return arr.sort(function (a, b) {
-  return a - b;
+                return a - b;
 		
 });
 
     }else if(order === 'descending'){
           return arr.sort(function (a, b) {
-  return b - a;
+                return b - a;
 		
 });
 
