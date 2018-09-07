@@ -24,38 +24,39 @@
 // Please make sure that when adding the new currency the message capitalize the coin name.
 // Please make sure that in the final message
 
-
-function addCurrency(coin,value, dbCoins){
-    dbCoins = [{
-  coin:'EURO', 
-  rate:0.86
-},
-{
-  coin:'YEN', 
-  rate:0.86
-},
-{
-  coin:'KORONA', 
-  rate:0.86
-}
-];
+dbCoins = [{
+    coin:'EURO', 
+    rate:0.86
+  },
+  {
+    coin:'YEN', 
+    rate:0.86
+  },
+  {
+    coin:'KORONA', 
+    rate:0.86
+  }
+  ];
+  function addCurrency(coin,value, dbCoins){
+   
     for(var i = 0; i < dbCoins.length; i++){
                     
                 if(dbCoins[i].coin === coin){
-                      findcurrency();
+                      
                         console.log('estupendo')
+							findCurrency(coin,value,dbCoins,i);
                                 break;
                     }else if (dbCoins[i].coin !== coin){
-                                dbCoins.push({coin: coin, rate: value})
-                        
+                                dbCoins.push(coin)
+                        			return `New coin ${coin} added to Database`
                                     break;
                             }
     }
-
+			
 }
-function findcurrency(coin,value, dbCoins){
-    var retrieve = dbCoins.rate;
-
+findCurrency = (coin,value,dbCoins,index) => {
+			
+    console.log(coin,value,index)
 }
 
 
