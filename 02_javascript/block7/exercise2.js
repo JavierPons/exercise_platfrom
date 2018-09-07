@@ -37,22 +37,15 @@ dbCoins = [{
     rate:0.86
   }
   ];
-  function addCurrency(coin,value, dbCoins){
-   
-    for(var i = 0; i < dbCoins.length; i++){
-                    
-                if(dbCoins[i].coin === coin){
-                      
-                        console.log('estupendo')
-							findCurrency(coin,value,dbCoins,i);
-                                break;
-                    }else if (dbCoins[i].coin !== coin){
-                                dbCoins.push(coin)
-                        			return `New coin ${coin} added to Database`
-                                    break;
-                            }
-    }
-			
+  function addCurrency(coin, value,dbCoins){
+    var myIndex = dbCoins.findIndex(obj => obj.coin == coin);
+   			if( myIndex !== -1 ){
+			 	findCurrency(coin, value, dbCoins, myIndex)}
+			else if(myIndex === -1 ){
+				 dbCoins.push({coin: coin});
+							
+					return `New coin ${coin} added to Database`
+            }    
 }
 findCurrency = (coin,value,dbCoins,index) => {
 			
