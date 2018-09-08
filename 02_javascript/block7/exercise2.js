@@ -49,7 +49,7 @@ dbCoins = [{
 }
 findCurrency = (coin,value,dbCoins,index) => {
 			
-    console.log(coin,value,index)
+    console.log(coin.rate,value,index)
 }
 
 
