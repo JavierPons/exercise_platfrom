@@ -37,36 +37,36 @@ dbCoins = [{
     rate:0.86
   }
   ];
-  function addCurrency(coin, value,dbCoins){
-    var myIndex = dbCoins.findIndex(obj => obj.coin == coin);
+  function addCurrency(coin,value,dbCoins){
+
+    var myIndex = dbCoins.findIndex(obj => obj.coin == coin.coin);
    			if( myIndex !== -1 ){
-			 	findCurrency(coin, value, dbCoins, myIndex)}
+			 	findcurrency(coin,value, dbCoins, myIndex)}
 			else if(myIndex === -1 ){
-				 dbCoins.push({coin: coin});
+				 dbCoins.push(coin);
 							
-					return `New coin ${coin} added to Database`
+					return `New coin ${coin.coin} added to Database`
             }    
 }
-var findCurrency = (coin,value,dbCoins,index) => {
+var findcurrency = (coin,value,dbCoins,index) => {
 		
-  var rate = (dbCoins[index].rate);
-
-    converter(rate,value, coin, dbCoins,index)
+  var rates = (dbCoins[index].rate);
+		
+    converter(rates,value, coin, dbCoins,index)
 
   
 }
 
-var converter = (rate,value, coin, dbCoins, index) => {
+var converter = (rates,value, coin, dbCoins, index) => {
 
-  var convert = rate * value;
+  var convert = rates * value;
     tellConversion(convert,coin,dbCoins,index,value)
 }
 
 var tellConversion = (convert,coin,dbCoins,index,value) => {
 
-    return `You will receive ${convert} usd for your ${value} ${dbCoins[index].coin}`
+    console.log( `You will receive ${convert} usd for your ${value} ${dbCoins[index].coin}`);
 }
-
 module.exports = {
     addCurrency, findcurrency, converter, tellConversion
 }
