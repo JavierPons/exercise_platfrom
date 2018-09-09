@@ -47,11 +47,25 @@ dbCoins = [{
 					return `New coin ${coin} added to Database`
             }    
 }
-findCurrency = (coin,value,dbCoins,index) => {
-			
-    console.log(coin.rate,value,index)
+var findCurrency = (coin,value,dbCoins,index) => {
+		
+  var rate = (dbCoins[index].rate);
+
+    converter(rate,value, coin, dbCoins,index)
+
+  
 }
 
+var converter = (rate,value, coin, dbCoins, index) => {
+
+  var convert = rate * value;
+    tellConversion(convert,coin,dbCoins,index,value)
+}
+
+var tellConversion = (convert,coin,dbCoins,index,value) => {
+
+    return `You will receive ${convert} usd for your ${value} ${dbCoins[index].coin}`
+}
 
 module.exports = {
     addCurrency, findcurrency, converter, tellConversion
