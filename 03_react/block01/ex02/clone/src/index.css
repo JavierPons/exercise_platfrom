@@ -2,4 +2,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #ccc;
+}
+
+.horizontal {
+display: inline-block;
+padding: 3%;
+background-color: aquamarine;
+margin: auto 0;
+color:red;
+
 }
