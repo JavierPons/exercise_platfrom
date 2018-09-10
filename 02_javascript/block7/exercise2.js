@@ -64,8 +64,9 @@ var converter = (rates,value, coin, dbCoins, index) => {
 }
 
 var tellConversion = (convert,coin,dbCoins,index,value) => {
-
-    console.log( `You will receive ${convert} usd for your ${value} ${dbCoins[index].coin}`);
+          var coinName = `${dbCoins[index].coin}`;
+          var upper = coinName.toUpperCase()
+    console.log( `You will receive ${convert} usd for your ${value} ${coinName}`);
 }
 module.exports = {
     addCurrency, findcurrency, converter, tellConversion
