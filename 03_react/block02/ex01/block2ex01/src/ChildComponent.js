@@ -1,17 +1,17 @@
 import React from 'react';
 
-class ChildComponent extends React.Component{
+ class ChildComponent extends React.Component{
 
-render(){
-    
-    return(
+ render(){
+     
+     return(
 
-       <h1>My name is {this.props.name} I'm as a child</h1>
-    )
+        <h1>My name is {this.props.name} I'm as a child</h1>
+     )
 
-}
+ }
 
 
-}
+ }
 
-export default ChildComponent;
+ export default ChildComponent;
