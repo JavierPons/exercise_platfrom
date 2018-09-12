@@ -13,6 +13,27 @@ margin: auto 0;
 color:red;
 text-transform: uppercase;
 padding-right: 2%;
-margin: 1%;
+margin: 0;
 
+}
+
+
+#header{
+  background-color: pink;
+  
+}
+#header img{
+  position: relative;
+  left: 5%;
+  display: inline;
+}
+#header ul li{
+  display: inline;
+  padding-right: 5%;
+  position: relative;
+  left: 25%;
+
+}
+#header h1{
+  display: inline-block;
 }

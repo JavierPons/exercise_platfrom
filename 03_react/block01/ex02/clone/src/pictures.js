@@ -1,25 +1,11 @@
 import React from 'react';
 import blue from './images/chalk.jpg'
-
+import Item from './Item'
 
 class Pictures extends React.Component{
 render(){
-    const resurce = [
-        {title: 'black',
-       img:'red',
-       price: 200},
-       {title: 'white',
-       img:'blue',
-       price: 34},
-       {title: 'red',
-       img:'./images/clound.jpg',
-       price: 100},
-       {title: 'grey',
-       img:'./images/footBlackBoard.jpg',
-       price: 70}
     
-    ]
-    var trackTrack = resurce.map((title, ind)=>{
+    this.trackTrack = this.props.product.map((title, ind)=>{
 
         return <div className='horizontal'>
                     <div 
@@ -34,10 +20,7 @@ render(){
                </div>
       })
     return(
-        <div>
-        {trackTrack}
-
-        </div>
+        <Item loop = {this.trackTrack}/>
     )
 
 }
