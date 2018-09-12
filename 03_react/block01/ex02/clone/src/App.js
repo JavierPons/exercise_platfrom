@@ -1,22 +1,42 @@
 import React from 'react';
 import pictures from './pictures'
 import Pictures from './pictures';
-
+import blacboard from './images/backboard.jpg'
+import chalk from './images/chalk.jpg'
+import  clound from './images/clound.jpg'
+import  magnetic from './images/magnetic-jpg.jpg'
+import second from './images/secondBlackBoard.jpg'
+import pencil from './images/pencil.jpg'
+import  heart from './images/heart.jpg'
+import foot from './images/footBlackBoard.jpg'
 class App extends React.Component {
   render() {
+   
     this.resurce = [
       {title: 'black',
-     img:'red',
+     img: blacboard,
      price: 200},
      {title: 'white',
-     img:'blue',
+     img: chalk,
      price: 34},
      {title: 'red',
-     img:'./images/clound.jpg',
+     img: clound,
      price: 100},
      {title: 'grey',
-     img:'./images/footBlackBoard.jpg',
-     price: 70}
+     img: magnetic,
+     price: 70},
+     {title: 'new',
+     img: second,
+     price: 170},
+     {title: 'good',
+     img: pencil,
+     price: 40},
+     {title: 'heart',
+     img: heart,
+     price: 120},
+     {title: 'hope',
+     img: foot,
+     price: 270}
   
   ]
     return (

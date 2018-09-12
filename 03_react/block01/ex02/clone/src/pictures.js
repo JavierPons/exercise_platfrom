@@ -1,10 +1,11 @@
 import React from 'react';
-import blue from './images/chalk.jpg'
+
 import Item from './Item'
 
 class Pictures extends React.Component{
+   
 render(){
-    
+  
     this.trackTrack = this.props.product.map((title, ind)=>{
 
         return <div className='horizontal'>
@@ -13,7 +14,7 @@ render(){
                         key='ind'>{title.title}</div>
                     <img 
                         style = {styles.text}
-                        src={blue} width='250'/>
+                        src={title.img} width='250'/>
                     <div 
                         style = {styles.text}
                         key='ind'>{title.price}</div>
