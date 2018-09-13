@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   constructor(){
     super()
-    this.state = {text:''}
+    this.state = {text:'',
+                  todos:[]}
     
   }
   
-  
   handleSubmit = (e) => {
-    e.preventDefault();      // prevent reload of page
+   e.preventDefault();      // prevent reload of page
     var text = this.refs.input.value.trim()
     this.setState({text})
-    //this.refs.input.value = '';
+    this.refs.input.value = '';
     console.log(text)
-    this.todo.push(text)
-    console.log(this.todo)
+    let {todos} = this.state;
+    this.todos.push({todo:'helllo'})
+    this.setState({todos:todos})
   }
    
   render() {
-    this.todo = []
+    let {todos} = this.state;
     return (
       <div className="App">
         <h2>toDo App</h2>
@@ -30,6 +30,7 @@ class App extends Component {
         <input ref = 'input'/> <button >+ add</button>
         </form>
         <div>{this.state.text}</div>
+       
       </div>
     );
   }
