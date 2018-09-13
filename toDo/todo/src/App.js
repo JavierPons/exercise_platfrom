@@ -10,18 +10,20 @@ class App extends Component {
   }
   
   handleSubmit = (e) => {
+    debugger
    e.preventDefault();      // prevent reload of page
     var text = this.refs.input.value.trim()
     this.setState({text})
     this.refs.input.value = '';
     console.log(text)
     let {todos} = this.state;
-    this.todos.push({todo:'helllo'})
+    todos.push({todo:text})
     this.setState({todos:todos})
   }
    
   render() {
-    let {todos} = this.state;
+
+    
     return (
       <div className="App">
         <h2>toDo App</h2>
