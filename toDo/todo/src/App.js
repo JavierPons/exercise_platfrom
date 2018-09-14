@@ -24,7 +24,7 @@ class App extends Component {
    
   render() {
     
-    var listName = this.state.todos;
+    let listName = this.state.todos;
    
     return (
       
@@ -35,7 +35,7 @@ class App extends Component {
         <input ref = 'input'/> <button >+ add</button>
         
         </form>
-        <TodoLista listNameFromParent={listName}/>
+        <TodoLista listNameFromParent={this.listName}/>
       </div>
     );
   }
