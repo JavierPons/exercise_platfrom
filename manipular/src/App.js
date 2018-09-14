@@ -14,17 +14,24 @@ export default class App extends React.Component {
     })
   }
   render() {
-   debugger
-    this.arr = ['l','T','f']
+
+    this.arr = []
     this.spl = this.state.shown.split('');
     this.arr.push(this.spl);
-    for(var i = 0; i < this.arr.length; i++){
-     debugger;
-      if(this.arr[i] === this.arr[i].toUpperCase()){
-       let message = 'Exist uppercase'
+    
+    for(var i = 0; i < this.spl.length; i++){
+     
+      if(this.sql[i] === this.spl[i].toUpperCase()){
+       this.message = 'Exist uppercase' 
       }else{
-       let message =  'There is not uppercase, try again'
+       this.message =  'There is not uppercase, try again'
       }
+      if(this.spl.length < 8){
+        this.message = 'It should have minimun 8 characters'
+      }else{
+        this.message = 'Password character well pass'
+      }
+      
     }
     return (
       <div>
@@ -34,7 +41,6 @@ export default class App extends React.Component {
               
               <button onClick={this.handleShow.bind(this)}>create a password</button>
                <h1>{this.message}</h1>
-              <h1>Password character well pass</h1>   
       </div>
     );
   }
