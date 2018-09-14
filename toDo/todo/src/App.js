@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import TodoLista from './TodoLista'
 
 class App extends Component {
   constructor(){
@@ -10,7 +11,7 @@ class App extends Component {
   }
   
   handleSubmit = (e) => {
-    debugger
+  
    e.preventDefault();      // prevent reload of page
     var text = this.refs.input.value.trim()
     this.setState({text})
@@ -22,17 +23,19 @@ class App extends Component {
   }
    
   render() {
-
     
+    var listName = this.state.todos;
+   
     return (
+      
       <div className="App">
         <h2>toDo App</h2>
         <h4>Add something to remember</h4>
         <form onSubmit ={this.handleSubmit.bind(this)}>
         <input ref = 'input'/> <button >+ add</button>
+        
         </form>
-        <div>{this.state.text}</div>
-       
+        <TodoLista listNameFromParent={listName}/>
       </div>
     );
   }
