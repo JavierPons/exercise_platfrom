@@ -12,19 +12,19 @@ class App extends Component {
   
   handleSubmit = (e) => {
   
-   e.preventDefault();      // prevent reload of page
-    var text = this.refs.input.value.trim()
-    this.setState({text})
-    this.refs.input.value = '';
-    console.log(text)
-    let {todos} = this.state;
+    e.preventDefault();      // prevent reload of page
+    var text = this.refs.input.value.trim()  //text assigned to the typed in input
+    this.setState({text})   // set new state to that input
+    this.refs.input.value = '';  // delete input field
+    console.log(text)       // console.log input
+    let {todos} = this.state;  
     todos.push({todo:text})
     this.setState({todos:todos})
   }
    
   render() {
     
-    let listName = this.state.todos;
+    
    
     return (
       
@@ -35,7 +35,7 @@ class App extends Component {
         <input ref = 'input'/> <button >+ add</button>
         
         </form>
-        <TodoLista listNameFromParent={this.listName}/>
+        <TodoLista listNameFromParent={this.state.todos}/>
       </div>
     );
   }
