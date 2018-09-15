@@ -21,6 +21,7 @@ class App extends Component {
     todos.push({todo:text})
     this.setState({todos:todos})
   }
+  
    
   render() {
     
@@ -35,7 +36,7 @@ class App extends Component {
         <input ref = 'input'/> <button >+ add</button>
         
         </form>
-        <TodoLista listNameFromParent={this.state.todos}/>
+        <TodoLista  listNameFromParent={this.state.todos}/>
       </div>
     );
   }
