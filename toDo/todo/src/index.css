@@ -5,6 +5,8 @@ body {
 }
 
 .box{
+  position: relative;
+  right: 20px;
   width: 25%;
   margin: auto;
   padding-top: 1%;
@@ -22,21 +24,26 @@ border: 1px solid #bebde9;
 
  li.item {
  padding-top: 0px;
+ padding-bottom: 0px;
 
  }
 .bin{
-width: 50%;
+width: 45%;
 display: inline-block;
 position: relative;
 right: 90%;
-top:20px;
+top:15px;
 border-top:0px;
-  
-  
-
-  
+float: left;
+display: none;
 }
+
+li:hover .bin{
+display: block;
+}
+
 .ite m:hover {
   visibility: visible;
   background-color: green;
 }
+
