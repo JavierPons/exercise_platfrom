@@ -46,4 +46,7 @@ display: block;
   visibility: visible;
   background-color: green;
 }
+.itemTrue{
+  text-decoration: line-through;
+}
 

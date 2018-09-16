@@ -6,7 +6,8 @@ class App extends Component {
   constructor(){
     super()
     this.state = {text:'',
-                  todos:[]}
+                  todos:[],
+                  checked:false}
     
   }
   
@@ -18,14 +19,14 @@ class App extends Component {
     this.refs.input.value = '';  // delete input field
     console.log(text)       // console.log input
     let {todos} = this.state;  
-    todos.push({todo:text})
+    todos.push({todo:text,checked:false})
     this.setState({todos:todos})
   }
   
    
   render() {
     
-    
+   
    
     return (
       
