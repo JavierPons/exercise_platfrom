@@ -14,9 +14,29 @@ body {
 .item{
 list-style-type: none;
 width: 25%;
-padding: 12px 45px;
+padding: 8px 45px;
 margin-bottom: 6px;
- border-top: 2px solid red;
-border-bottom: 2px solid gray;
+background-color: #e2e2f9;
+border: 1px solid #bebde9;
+ }
 
+ li.item {
+ padding-top: 0px;
+
+ }
+.bin{
+width: 50%;
+display: inline-block;
+position: relative;
+right: 90%;
+top:20px;
+border-top:0px;
+  
+  
+
+  
+}
+.ite m:hover {
+  visibility: visible;
+  background-color: green;
 }
