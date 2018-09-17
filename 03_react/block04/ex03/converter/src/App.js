@@ -19,7 +19,7 @@ class App extends Component {
 
   degree(){
    var num = this.state.text;
-   var conv =Math.floor((num -32) / 1.8) 
+   var conv = Math.floor(num-32/1.8)
    console.log(conv)
     this.setState({
         result: conv
