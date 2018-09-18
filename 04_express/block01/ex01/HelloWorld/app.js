@@ -1,10 +1,6 @@
 const express = require('express');
 const app = express();
 const port = 3001;
-const langu = {
-    NL: 'Hallo Wereld}',
-    HI : 'नमस्ते दुनिया'
- }
 
 app.listen(port, () => {
     console.log(`server is running on port ${port}`);
