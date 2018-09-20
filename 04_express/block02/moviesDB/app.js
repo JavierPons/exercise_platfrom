@@ -13,7 +13,7 @@ app.use('/db', (req,res) => {
 app.post('/genre/add',(req, res) =>{
     let key = req.body.genre;
      db.push({key:[]})  
-        console.log(db)
+        console.log(key)
 })
 console.log('=====>', db)
 
