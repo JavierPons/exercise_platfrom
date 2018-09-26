@@ -30,13 +30,15 @@ app.post('/genre/add', (req,res) => {
             console.log('genre exists')
             genreExists = true
         } 
+
+    })
         // after looping we can see if we can add a new genre:
         if (genreExists == false) { // if genre passed is not in the db we can add it 
 
             db.push({genre:key, movies:[]}) // we a pushing a new object to the DB and it has genre and movies array for the new movies to be added to
         }
         
-    })
+   
    res.send(db) // and we send back the entire db
 
 
@@ -59,7 +61,22 @@ app.post('/genre/add', (req,res) => {
  // How I can /genre/updated existing genre 
  // how I loop and how I add new genre
 
+ app.post('/genre/update', (req,res) => {
+    let oldGenre = req.body.oldGenre; // we pass old genre
+    let newGenre = req.body.newGenre // we pass new genre
 
+     db.forEach(function(ele){  
+         if(ele.genre == oldGenre){   // now we are searching for the genre to be updated
+             db[db.indexOf(ele)].genre = newGenre // and we assign new genre as a value for the 'genre' key of the ele which is found to have the matching genre
+         } else {
+             console.log('genre is not found') // otherwise, genre is not found so we can't update it
+         }
+         
+     })
+    res.send(db) // and we send back the entire db
+
+
+})
 
 
 app.post('/genre/movie/add', (req,res) => {
