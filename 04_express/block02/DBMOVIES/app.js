@@ -20,6 +20,8 @@ let  db = [
             ]}
 ] 
 
+let gen = [];
+
 app.post('/genre/add', (req,res) => {
     var genreExists = false // this one is to track if genre is already there, initially false
     let key = req.body.genre;
@@ -44,6 +46,18 @@ app.post('/genre/add', (req,res) => {
 
 })
 
+app.post('/genre/delete', (req,res)=>{
+        let deleteGenre = req.body.deleteGenre; // one we want to delete
+            console.log(deleteGenre);
+        db.forEach(function(ele,i){
+                if(ele.genre == deleteGenre){
+                    delete db[i];
+                }
+            })
+
+        res.send(db)
+        
+})
 
 
 
@@ -54,9 +68,6 @@ app.post('/genre/add', (req,res) => {
 //                 console.log({genre: key})
 //             }
 //         })
-       
-
-
 // })
  // How I can /genre/updated existing genre 
  // how I loop and how I add new genre
@@ -89,20 +100,21 @@ app.post('/genre/movie/add', (req,res) => {
     res.send({title:key} )
 })
 
-// how to display all genres  /genres
-
-// how to display all genres and all movies   / genre/movies
-
-
-//how to delete how to get there, most problem is looping and get exactly film I 
-// want delete    /genre/movie/delete
-
-// how to update title I will try to do for myself
+app.get('/genre', (req,res) => {
+    db.forEach(function(ele){
+        console.log(ele.genre);
+        gen.push(ele.genre)
+    })
+        return gen;
+})
 
 app.get('/genre/movies',(req, res) => {
     db.forEach(function(ele){
-        console.log(ele)       // why is not working the console.log here?
+        console.log(ele.genre, ele.movies) 
+         gen.push(ele.genre)
+         gen.push(ele.movies)
     })
+    return gen
 })
 
 
