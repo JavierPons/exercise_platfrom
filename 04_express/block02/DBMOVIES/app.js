@@ -117,6 +117,51 @@ app.get('/genre/movies',(req, res) => {
     return gen
 })
 
+app.post('/genre/movie/add', (req, res) => {
+    let type = req.body.genre;
+    let title = req.body.title;
+      db.forEach(function(ele,i){
+        if(ele.genre == type){
+            db[i].movies.push({title})
+         }
+    })  
+       
+    
+    res.send(db)
+})
+
+app.post('/genre/movie/delete', (req,res) =>{
+        let deleteMovies = req.body.title;
+        let genre = req.body.genre;
+        db.forEach(function(ele,i){
+            if(ele.genre == genre){
+                delete db[i].movies
+            }
+        })
+
+        res.send(db);
+})
+
+app.post('/genre/movie/update', (req,res) => {
+    let oldTitle = req.body.oldTitle;
+    let newTitle = req.body.newTitle;
+    let oldYear = req.body.oldYear;
+    let newYear = req.body.newYear;
+    let genre = req.body.genre;
+
+    db.forEach(function(ele,i){
+        if(ele.genre == genre){
+            db[db.indexOf(ele)].movies[oldTitle] = newTitle;  
+
+        }
+        if(ele.genre == genre){
+            db[db.indexOf(ele)].movies[oldYear] = newYear;
+        }
+    })
+
+    res.send(db);
+})
+
 
 app.listen(port, () => {
     console.log('listening port 3000...')
