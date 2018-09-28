@@ -105,7 +105,7 @@ app.get('/genre', (req,res) => {
         console.log(ele.genre);
         gen.push(ele.genre)
     })
-        return gen;
+        res.send(gen);
 })
 
 app.get('/genre/movies',(req, res) => {
@@ -114,15 +114,16 @@ app.get('/genre/movies',(req, res) => {
          gen.push(ele.genre)
          gen.push(ele.movies)
     })
-    return gen
+    res.send(gen);
 })
 
 app.post('/genre/movie/add', (req, res) => {
     let type = req.body.genre;
     let title = req.body.title;
+    let year = req.body.title;
       db.forEach(function(ele,i){
         if(ele.genre == type){
-            db[i].movies.push({title})
+            db[i].movies.push({title: title, year: year})
          }
     })  
        

@@ -6,6 +6,4 @@ async function get_title_and_year (film) {
     console.log(movie.Title);
     console.log(movie.Year);
     return objFilm = {title:movie.Title, year:movie.Year}
-    
-
 }
