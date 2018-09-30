@@ -146,18 +146,36 @@ app.post('/genre/movie/delete', (req,res) =>{
 app.post('/genre/movie/update', (req,res) => {
     let oldTitle = req.body.oldTitle;
     let newTitle = req.body.newTitle;
-    let oldYear = req.body.oldYear;
+    
     let newYear = req.body.newYear;
     let genre = req.body.genre;
 
+    // 1. Find an object with a movie with matching title oldTitle
+    // 2. Find the index of this movie object
+    // 3. By using index assign new values to the title and year
+    // 4. If newYear is not provided, just ignore it without throwing an error
+
+
     db.forEach(function(ele,i){
         if(ele.genre == genre){
-            db[db.indexOf(ele)].movies[oldTitle] = newTitle;  
+          db[db.indexOf(ele)].movies.forEach(function(item,ind){
+            if(item.title == oldTitle){
+               db[db.indexOf(ele)].movies[ind].title = newTitle;
+               if(newYear == undefined){
+                            console.log('there is not year given')
+            }else{
+                db[db.indexOf(ele)].movies[ind].year = newYear;
+            }
+            }
+             
+          })
+              
+          
 
         }
-        if(ele.genre == genre){
-            db[db.indexOf(ele)].movies[oldYear] = newYear;
-        }
+        // if(ele.genre == genre){
+        //     db[db.indexOf(ele)].movies[oldYear] = newYear;
+        // }
     })
 
     res.send(db);
