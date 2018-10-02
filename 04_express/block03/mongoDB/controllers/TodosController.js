@@ -38,7 +38,7 @@ class TodosController {
     async _delete (req, res) {
         let { _id } = req.body;
         try{
-            const todo = await Todos.remove({_d});
+            const todo = await Todos.remove({_id});
             res.send(todo);   
         }
         catch(e){
