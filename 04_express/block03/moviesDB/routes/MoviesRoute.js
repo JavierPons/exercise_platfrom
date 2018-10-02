@@ -16,16 +16,16 @@ const express   = require('express'),
 
     // == This route will update
 
-    route.post('/genre/movie/update', controller._update);
+    router.post('/genre/movie/update', controller._update);
 
     // == This route will delete movie
 
-    route.post('/genre/movie/delete', controller._deleteMovie);
+    router.post('/genre/movie/delete', controller._deleteMovie);
 
     // This route will delete genre
 
-    route.post('/genre/delete', controller._deleteGenre);
+    router.post('/genre/delete', controller._deleteGenre);
 
     // This route will add genre
 
-    route.post('/genre/add', controller._addGenre);
+    router.post('/genre/add', controller._addGenre);
