@@ -29,3 +29,5 @@ const express   = require('express'),
     // This route will add genre
 
     router.post('/genre/add', controller._addGenre);
+
+    module.exports = router;

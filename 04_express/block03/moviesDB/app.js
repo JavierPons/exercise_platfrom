@@ -1,7 +1,7 @@
 const express = require('express'),
     app = express(),
     mongoose = require('mongoose'),
-    todosRoute = require('./routes/MoviesRoute'),
+    movieRoute = require('./routes/MoviesRoute'),
     bodyParser = require('body-parser');
 // =================== initial settings ===================
 app.use(bodyParser.urlencoded({extended: true}));
@@ -11,6 +11,6 @@ mongoose.connect('mongodb://localhost:27017/YourDBname',{
     userNewUrlParser:true
 })
 // routes
-app.use('/todos', todosRoute);
+app.use('/moviedb', movieRoute);
 // Set the server to listen on port 3000
 app.listen(3000, () => console.log(`listening on port 3000`))
