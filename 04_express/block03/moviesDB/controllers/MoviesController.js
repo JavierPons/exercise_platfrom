@@ -1,4 +1,5 @@
 const Movie = require('../models/MoviesModel');
+const Genre = require('../models/GenreModel');
 
 class MovieController {
     //GET FIND ALL
