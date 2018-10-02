@@ -1,7 +1,7 @@
 const express = require('express'),
     app = express(),
     mongoose = require('mongoose'),
-    todosRoute = require('./routes/TodosRoute'),
+    todosRoute = require('./routes/MoviesRoute'),
     bodyParser = require('body-parser');
 // =================== initial settings ===================
 app.use(bodyParser.urlencoded({extended: true}));

@@ -109,8 +109,8 @@ app.get('/genre', (req,res) => {
 })
 
 app.get('/genre/movies',(req, res) => {
-    db.forEach(function(ele){
-        console.log(ele.genre, ele.movies) 
+   db.forEach(function(ele){
+        console. log(ele.genre, ele.movies) 
          gen.push(ele.genre)
          gen.push(ele.movies)
     })

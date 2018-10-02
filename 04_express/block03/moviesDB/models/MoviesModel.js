@@ -13,7 +13,7 @@ module.exports = mongoose.model(genres,GenreSchema);
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const MoviesSchema = new Schema({
+const MovieSchema = new Schema({
     genre_id:{
         type:Schema.Types.ObjectId,
         required:true
@@ -24,5 +24,5 @@ const MoviesSchema = new Schema({
     } 
 })
 
-module.exports = mongoose.model(movies,MoviesSchema);
+module.exports = mongoose.model(movies,MovieSchema);
 
