@@ -6,11 +6,8 @@ class MovieController {
 
     async _get(req,res){
         try{
-            db.forEach(function(ele){
-                console.log(ele.genre);
-                gen.push(ele.genre)
-            })
-                res.send(gen);
+            const done = await Genre.find({});
+            res.send(done);
         }
         catch(e){
             res.send({e})
@@ -20,12 +17,14 @@ class MovieController {
 
     async _movies(req,res){
         try{
-            db.forEach(function(ele){
-                console. log(ele.genre, ele.movies) 
-                 gen.push(ele.genre)
-                 gen.push(ele.movies)
-            })
-            res.send(gen);
+            const done = await Movie.find({});
+            res.send(done);
+            // db.forEach(function(ele){
+            //     console. log(ele.genre, ele.movies) 
+            //      gen.push(ele.genre)
+            //      gen.push(ele.movies)
+            // })
+            // res.send(gen);
         }
         catch(e){
             res.send({e});
@@ -34,12 +33,15 @@ class MovieController {
         // ADD MOVIES
 
     async _add(req,res){
+        let { film } = req.body;
         try{
-            let key = req.body.genre
-            let result = ele => {return ele.genre === key}
-            let index = db.findIndex(result)
-            db[index].movies.push({title:'', year:value})
-            res.send({title:key} )
+           const done = await Movie.create({film});
+           res.send(done);
+            // let key = req.body.genre
+            // let result = ele => {return ele.genre === key}
+            // let index = db.findIndex(result)
+            // db[index].movies.push({title:'', year:value})
+            // res.send({title:key} )
         }
         catch(e){
             res.send({e})
