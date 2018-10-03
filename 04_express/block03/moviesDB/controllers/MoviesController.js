@@ -116,26 +116,11 @@ class MovieController {
     }
 
     async _addGenre(req,res){
+        let { genre}= req.body;
         try{
-            var genreExists = false // this one is to track if genre is already there, initially false
-    let key = req.body.genre;
-    console.log(key) // I WILL FIRST PUT A CONSOLE.LOG HERE TO SEE WHAT KEY IS
-    // now I know it is a genre passed from the front-end.
-    db.forEach(function(ele){  
-        if(ele.genre == key){   // now this would be a proper condition, if genre's value is matching the one passed form the frond-end
-            console.log('genre exists')
-            genreExists = true
-        } 
-
-    })
-        // after looping we can see if we can add a new genre:
-        if (genreExists == false) { // if genre passed is not in the db we can add it 
-
-            db.push({genre:key, movies:[]}) // we a pushing a new object to the DB and it has genre and movies array for the new movies to be added to
-        }
+            const done = await Genre.create({genre});
+            res.send(done)
         
-   
-   res.send(db) // and we send back the entire db
         }
         catch(e){
             res.send({e})
