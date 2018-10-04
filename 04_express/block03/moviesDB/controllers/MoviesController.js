@@ -33,18 +33,20 @@ class MovieController {
         // ADD MOVIES
 
     async _add(req,res){
-        let { film } = req.body;
-        try{
-           const done = await Movie.create({film});
-           res.send(done);
-            // let key = req.body.genre
-            // let result = ele => {return ele.genre === key}
-            // let index = db.findIndex(result)
-            // db[index].movies.push({title:'', year:value})
-            // res.send({title:key} )
-        }
-        catch(e){
-            res.send({e})
+        let { film, year, genre } = req.body;
+        console.log('====>', film)
+        const genr = await Genre.findOne({genre})
+        if(genr){
+            try{
+            const done = await Movie.create({genre:{genre},title:{film},year:{year}});
+            res.send(done);
+                
+            }
+            catch(e){
+                res.send({e})
+            }
+        }else{
+            console.log('genre not exist');
         }
     }
 
