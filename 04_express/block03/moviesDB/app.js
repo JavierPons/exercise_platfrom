@@ -11,6 +11,6 @@ mongoose.connect('mongodb://localhost:27017/YourDBname',{
     userNewUrlParser:true
 })
 // routes
-app.use('/moviedb', movieRoute);
+app.use('/', movieRoute);
 // Set the server to listen on port 3000
 app.listen(3000, () => console.log(`listening on port 3000`))

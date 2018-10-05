@@ -1,18 +1,7 @@
 const Movie = require('../models/MoviesModel');
-const Genre = require('../models/GenreModel');
 
 class MovieController {
-    //GET FIND ALL
-
-    async _get(req,res){
-        try{
-            const done = await Genre.find({});
-            res.send(done);
-        }
-        catch(e){
-            res.send({e})
-        }
-    }
+   
         // GET MOVIES
 
     async _movies(req,res){
@@ -28,13 +17,13 @@ class MovieController {
         // ADD MOVIES
 
     async _add(req,res){
-        let { film, year, genre } = req.body;
-        console.log('====>', film)
-        const genr = await Genre.findOne({genre})
+        let { film, year, genre_id } = req.body;
+
+        const genr = await Genre.findOne({_id:genre_id})
         if(genr){
             try{
-            const done = await Movie.create({genre:{genre},title:{film},year:{year}});
-            res.send(done);
+                const done = await Movie.create({genre_id:genre_id,title:film,year:year});
+            res.send({done});
                 
             }
             catch(e){
@@ -49,83 +38,34 @@ class MovieController {
 
     async _update(req, res){
         let { oldFilm, newFilm, genre, year} = req.body;
-        const genr = await Genre.findOne({genre})
-        const fil = await Movie.findOne({oldFilm})
-        if(genr){
-            if(fil){
+        console.log(oldFilm, newFilm, genre, year)
             try{
-                const done = await Movie.create({genre:{genre},title:{newFilm},year:{year}});
-                res.send(done);   
+
+                // filter / selector  {title:oldFilm}
+                // update $set:{ genre:genre,title:newFilm, year:year
+                const done = await Movie.updateOne({title:oldFilm},{$set:{
+                    genre:genre,title:newFilm, year:year
+                }})
+                res.status(200).send({done});
             }
             catch(e){
                 res.send({e})
             }
-        }else{
-            console.log('Film not found. Try again!')
-        }   
     }
 
-    }
+    // DELETE MOVIE
 
     async _deleteMovie(req,res){
-        let { genre, film, year} = req.body;
-        const genr = await Genre.findOne({genre})
-        const fil = await Movie.findOne({film})
-        if(genr){
-            if(fil){
-                    try{
-                        const done = await Movie.deleteOne({title:{fil},year:{year}});
-                        
-                        res.send(done);
-                    }
-                    catch(e){
-                        res.send({e})
-                    }
-            }else{
-                console.log('Not found that film. Try again!')
-            }
-
-            }else{
-                console.log('Genre not found. Try again')
-            }       
-        }
-
-        
-    
-
-    async _deleteGenre(req, res){
-        let { genre } = req.body;
-        const genr = await Genre.findOne({genre})
-       
-        if(genr){
-                    try{
-                        const done = await Movie.deleteOne({genre:{genr}});
-                        
-                        res.send(done);
-                    }
-                    catch(e){
-                        res.send({e})
-                    }
-            
-
-            }else{
-                console.log('Genre not found. Try again')
-            }       
-        }
-    
-
-    async _addGenre(req,res){
-        let { genre}= req.body;
+        console.log('Hey !!!')
+        let {film, year} = req.body;
         try{
-            const done = await Genre.create({genre});
-            res.send(done)
-        
+            const done = await Movie.deleteOne({title:film,year:year});
+            res.send({done});
         }
         catch(e){
             res.send({e})
         }
-    }
-
+    }  
 }
 
 module.exports = new MovieController();
