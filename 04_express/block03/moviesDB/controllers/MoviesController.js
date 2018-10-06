@@ -1,5 +1,5 @@
 const Movie = require('../models/MoviesModel');
-
+const Genre = require('../models/GenreModel');
 class MovieController {
    
         // GET MOVIES
@@ -18,8 +18,8 @@ class MovieController {
 
     async _add(req,res){
         let { film, year, genre_id} = req.body;
-            console.log(film, year, genre)
-        const genr = await Movie.findOne({_id:genre_id})
+            console.log(film, year, genre_id)
+        const genr = await Genre.findOne({_id:genre_id})
             console.log(genr,'====>')
         if(genr){
             try{
