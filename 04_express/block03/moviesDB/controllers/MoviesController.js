@@ -17,9 +17,10 @@ class MovieController {
         // ADD MOVIES
 
     async _add(req,res){
-        let { film, year, genre_id } = req.body;
-
-        const genr = await Genre.findOne({_id:genre_id})
+        let { film, year, genre_id} = req.body;
+            console.log(film, year, genre)
+        const genr = await Movie.findOne({_id:genre_id})
+            console.log(genr,'====>')
         if(genr){
             try{
                 const done = await Movie.create({genre_id:genre_id,title:film,year:year});
