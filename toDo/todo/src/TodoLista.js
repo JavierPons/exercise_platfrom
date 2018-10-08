@@ -1,10 +1,15 @@
 import React from 'react';
 import './bin.png';
 class TodoLista extends React.Component{
-   changeLi(){
-       
-       console.log('checked')
-   }
+    findItem(){
+      let ind = () =>{
+        this.props.listNameFromParent.findIndex(this.item.todo)
+
+        this.props.callBack(ind);
+      } 
+
+    }
+
 
     render(){
         
@@ -13,7 +18,7 @@ class TodoLista extends React.Component{
         this.toma = listNameFromParent.map((item,i)=>{
             
                      if(item.checked === false){
-                       return <li className='item' key={i} onClick={this.changeLi} ><img 
+                       return <li className='item' key={i} onClick={this.findItem} ><img 
                         className='bin' src={require('./bin.png')} alt='bin' />   {item.todo}</li>
                      }else{
                        return  <li className='itemTrue' key={i}><img 
