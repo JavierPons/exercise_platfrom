@@ -22,22 +22,9 @@ class App extends Component {
     todos.push({todo:text,checked:false})
     this.setState({todos:todos})
   }
-
-    deleteMyLi(){
-      let { todos } = this.state;
-     // todos.splice(i,1)
-      
-
-      this.setState({todos:todos})
-     }
-
   
-  
-   
   render() {
     
-   
-   
     return (
       
       <div className="App">
@@ -47,7 +34,7 @@ class App extends Component {
         <input ref = 'input'/> <button >+ add</button>
         
         </form>
-        <TodoLista  listNameFromParent={this.state.todos} callBack={this.deleteMyLi}/>
+        <TodoLista  listNameFromParent={this.state.todos} />
       </div>
     );
   }
