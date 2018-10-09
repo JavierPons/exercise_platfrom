@@ -7,7 +7,8 @@ class App extends Component {
     super()
     this.state = {text:'',
                   todos:[],
-                  checked:false}
+                  checked:false,
+                  }
     
   }
   
@@ -19,12 +20,23 @@ class App extends Component {
     this.refs.input.value = '';  // delete input field
     console.log(text)       // console.log input
     let {todos} = this.state;  
-    todos.push({todo:text,checked:false})
+    todos.push({todo:text,checked:false,textDecoration: 'none',color:'red'})
     this.setState({todos:todos})
   }
   
+  changeProperty = (i)=>{
+    let { todos } = this.state
+    if(todos[i]){
+      todos[i].textDecoration = 'line-through'
+      this.setState({todos:todos});
+    }
+
+
+
+  }
+  
   render() {
-    
+  
     return (
       
       <div className="App">
@@ -34,7 +46,7 @@ class App extends Component {
         <input ref = 'input'/> <button >+ add</button>
         
         </form>
-        <TodoLista  listNameFromParent={this.state.todos} />
+        <TodoLista  listNameFromParent={this.state.todos} changeProp={this.changeProperty} />
       </div>
     );
   }

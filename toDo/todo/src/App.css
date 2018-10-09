@@ -31,3 +31,8 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+/* else{
+  return  <li className='itemTrue' key={i}><img 
+   className='bin' src={require('./bin.png')} alt='bin' />   {item.todo}</li>} */
