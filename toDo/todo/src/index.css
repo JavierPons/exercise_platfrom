@@ -2,15 +2,10 @@ body {
   margin: 0;
   padding: 8% 0 0 0;
   font-family: sans-serif;
+ 
 }
-
-.box{
-  position: relative;
-  right: 20px;
-  width: 25%;
-  margin: auto;
-  padding-top: 1%;
-
+h2,h4, form{
+  text-align: center;
 }
 
 .item{
@@ -41,12 +36,4 @@ li:hover .bin{
 display: block;
 }
 
-.ite m:hover {
-  visibility: visible;
-  background-color: green;
-}
-.itemTrue{
-  text-decoration: line-through;
-  
-}
 

@@ -1,10 +1,11 @@
 .App {
-  text-align: center;
+  padding-bottom: 5%;
+  padding-top: 5%;
   background-color: grey;
   width: 40%;
   height: 45%;
   margin: 0 auto;
-
+  border-radius: 20px;
 }
 
 .App-logo {
@@ -31,8 +32,3 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-
-/* else{
-  return  <li className='itemTrue' key={i}><img 
-   className='bin' src={require('./bin.png')} alt='bin' />   {item.todo}</li>} */

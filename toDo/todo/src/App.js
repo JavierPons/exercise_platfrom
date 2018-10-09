@@ -20,14 +20,16 @@ class App extends Component {
     this.refs.input.value = '';  // delete input field
     console.log(text)       // console.log input
     let {todos} = this.state;  
-    todos.push({todo:text,checked:false,textDecoration: 'none',color:'red'})
+    todos.push({todo:text,checked:false,textDecoration: 'none',color:'black'})
     this.setState({todos:todos})
   }
   
   changeProperty = (i)=>{
     let { todos } = this.state
     if(todos[i]){
-      todos[i].textDecoration = 'line-through'
+      todos[i].color = 'grey'
+      todos[i].textDecoration = 'line-through';
+      
       this.setState({todos:todos});
     }
 

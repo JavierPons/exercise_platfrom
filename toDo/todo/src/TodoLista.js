@@ -12,9 +12,11 @@ class TodoLista extends React.Component{
        
         let listNameFromParent =  this.props.listNameFromParent || []
         this.toma = listNameFromParent.map((item,i)=>{
-                
+              
                 return <li 
-                        style ={{textDecoration:item.textDecoration}}
+                
+                        style ={{textDecoration:item.textDecoration, color:item.color}}
+                        
                         className='item' key={i} 
                             onClick={()=> this.props.changeProp(i)} >
                             <img 
